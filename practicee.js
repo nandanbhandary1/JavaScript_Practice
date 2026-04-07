@@ -1,5 +1,6 @@
 // const { emit } = require("node:cluster")
 
+const { error } = require("node:console");
 const { resolve } = require("node:dns");
 
 // const { reverse } = require("node:dns");
@@ -202,5 +203,31 @@ const { resolve } = require("node:dns");
 
 
 let promise1 = new Promise((resolve, reject) => {
-    
+    let success = true;
+    if (success) {
+        resolve("Promise Fulfilled")
+    } else {
+        reject("Promise rejected")
+    }
 })
+
+
+promise1.then((message) => {
+    console.log(message);
+    return "second"
+}).then((second_message) => {
+    console.log(second_message);
+    return "Third"
+}).then((third_message) => {
+    console.log(third_message);
+}).catch((error)=> {
+    console.log(error);
+}).finally((message) => {
+    console.log("I run always");
+})
+
+// promise1.then((message) => {
+//     console.log("The message is", message);
+// }).catch((error) => {
+//     console.log(error);
+// })
