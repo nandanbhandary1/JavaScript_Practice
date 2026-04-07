@@ -155,7 +155,7 @@ prepare_food()
 
 // 3 Async-Await
 
-function prepare_food() {
+async function prepare_food() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             console.log("Prepare Food")
@@ -164,7 +164,7 @@ function prepare_food() {
     })
 }
 
-function cook_food() {
+async function cook_food() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             console.log("Cook Food")
@@ -173,7 +173,7 @@ function cook_food() {
     })
 }
 
-function pack_order() {
+async function pack_order() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             console.log("Pack Food")
