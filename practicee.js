@@ -231,3 +231,22 @@ promise1.then((message) => {
 // }).catch((error) => {
 //     console.log(error);
 // })
+
+let prom1 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 1000, "first")
+})
+
+let prom2 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 2000, "second")
+})
+
+let prom3 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 3000, "third")
+})
+
+Promise.all([prom1, prom2, prom3])
+.then((values) => {
+    console.log(values);
+}).catch((error) => {
+    console.log(error);
+})
